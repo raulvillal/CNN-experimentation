@@ -1,4 +1,7 @@
 import numpy as np
+import nnfs
+
+nnfs.init()
 
 X = [[1, 2, 3, 2.5],
     [2.0, 5.0, -1.0, 2.0],
@@ -11,6 +14,10 @@ class Layer_Dense:
     def forward(self, inputs):
         self.output = np.dot(inputs, self.weights) + self.biases
         
+class Activation_ReLU:
+    def forward(self, inputs):
+        self.output = np.maximun(0, inputs)
+         
 layer1 = Layer_Dense(4,5)
 layer2 = Layer_Dense(5,2)
 
