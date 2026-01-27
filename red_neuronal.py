@@ -529,6 +529,7 @@ model = Model()
 
 model.add(Layer_Dense(2, 512, weight_regularizer_l2=5e-4, bias_regularizer_l2=5e-4))
 model.add(Activation_ReLU())
+model.add(Layer_Dropout(0.1))
 model.add(Layer_Dense(512,3))
 model.add(Activation_Softmax())
 model.set(
